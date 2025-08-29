@@ -220,8 +220,6 @@
 
   <div class="contact-info fade-in">
     <p class="dark-mode">
-      <i class="fas fa-phone-alt"></i>
-      <a href="tel:01118038076" class="dark-mode">01118038076</a>
     </p>
 
     <div class="social-links">
