@@ -26,6 +26,11 @@ return [
 'portfolio_erp_desc' => 'Enterprise Resource Planning system for managing operations, improving efficiency, and integrating departments',
 
 
+'portfolio_reg_title' => 'Restaurant Management System',
+'portfolio_reg_desc' => 'Comprehensive system for managing restaurant operations including orders, inventory, staff, and accounting to enhance efficiency and service',
+
+
+
     // Image alt texts
     'ecommerce_site_alt' => 'E-Commerce Site',
     'blog_site_alt' => 'Blog Site',
