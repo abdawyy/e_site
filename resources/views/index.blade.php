@@ -123,7 +123,7 @@
     <button class="filter-btn active" data-filter="all">{{ __('messages.filter_all') }}</button>
     <button class="filter-btn" data-filter="ecommerce">{{ __('messages.filter_ecommerce') }}</button>
     <button class="filter-btn" data-filter="blog">{{ __('messages.filter_blog') }}</button>
-    {{-- <button class="filter-btn" data-filter="corporate">{{ __('messages.filter_corporate') }}</button> --}}
+    <button class="filter-btn" data-filter="corporate">{{ __('messages.filter_corporate') }}</button>
   </div>
 
   <div class="portfolio-grid">
@@ -143,12 +143,35 @@
         <p class="dark-mode">{{ __('messages.portfolio_lamstoma_desc') }}</p>
       </div>
     </a>
+       <a href="https://car-demo-sites.web.app/index.html" class="portfolio-card fade-in" data-category="blog">
+      <img src="{{ asset('img/car.png') }}" alt="{{ __('messages.blog_site_alt') }}">
+      <div class="card-info">
+        <h3 class="dark-mode">{{ __('messages.portfolio_car_title') }}</h3>
+        <p class="dark-mode">{{ __('messages.portfolio_car_desc') }}</p>
+      </div>
+    </a>
 
     <a href="https://jaysbasic.site/" class="portfolio-card fade-in" data-category="ecommerce">
       <img src="{{ asset('img/jay.png') }}" alt="{{ __('messages.ecommerce_site2_alt') }}">
       <div class="card-info">
         <h3 class="dark-mode">{{ __('messages.portfolio_jays_title') }}</h3>
         <p class="dark-mode">{{ __('messages.portfolio_jays_desc') }}</p>
+      </div>
+    </a>
+
+        <a href="https://hayahfashion.net/" class="portfolio-card fade-in" data-category="corporate">
+      <img src="{{ asset('img/erp.png') }}" alt="{{ __('messages.ecommerce_site_alt') }}">
+      <div class="card-info">
+        <h3 class="dark-mode">{{ __('messages.portfolio_erp_title') }}</h3>
+        <p class="dark-mode">{{ __('messages.portfolio_erp_desc') }}</p>
+      </div>
+    </a>
+
+    <a href="https://lamstoma.com/" class="portfolio-card fade-in" data-category="corporate">
+      <img src="{{ asset('img/reg.png') }}" alt="{{ __('messages.blog_site_alt') }}">
+      <div class="card-info">
+        <h3 class="dark-mode">{{ __('messages.portfolio_reg_title') }}</h3>
+        <p class="dark-mode">{{ __('messages.portfolio_reg_desc') }}</p>
       </div>
     </a>
 

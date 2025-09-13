@@ -17,6 +17,14 @@ return [
     'portfolio_jays_title' => 'Jay\'s',
     'portfolio_jays_desc' => 'متجر إلكتروني عصري للأزياء المحتشمة',
 
+    'portfolio_car_title' => 'خدمات السيارات',
+'portfolio_car_desc' => 'خدمات صيانة وإصلاح السيارات باحترافية وموثوقية',
+
+
+'portfolio_erp_title' => 'نظام ERP',
+'portfolio_erp_desc' => 'نظام تخطيط موارد المؤسسات لإدارة العمليات وتحسين الكفاءة وتكامل الأقسام',
+
+
 
 
     // Image alt texts

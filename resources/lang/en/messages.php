@@ -18,6 +18,14 @@ return [
     'portfolio_jays_title' => 'Jay\'s',
     'portfolio_jays_desc' => 'Modern modest fashion online store',
 
+    'portfolio_car_title' => 'Car Services',
+    'portfolio_car_desc' => 'Professional and reliable car services for maintenance, repair, and care',
+
+
+'portfolio_erp_title' => 'ERP System',
+'portfolio_erp_desc' => 'Enterprise Resource Planning system for managing operations, improving efficiency, and integrating departments',
+
+
     // Image alt texts
     'ecommerce_site_alt' => 'E-Commerce Site',
     'blog_site_alt' => 'Blog Site',
