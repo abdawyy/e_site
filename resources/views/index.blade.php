@@ -282,7 +282,6 @@
             <div class="col-md-8">
                 <div class="section-header d-flex flex-wrap justify-content-center justify-content-md-start align-items-center">
                     <h2 class="display-5 m-0">{{ __('messages.recent_projects') }}</h2>
-                    <a href="#" class="btn-link ms-0 ms-md-5 text-dark text-decoration-none">{{ __('messages.view_all_projects') }}</a>
                 </div>
             </div>
             <div class="col-md-4">
