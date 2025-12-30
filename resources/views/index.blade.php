@@ -11,6 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
   <style>
     /* ========================================
@@ -130,6 +131,36 @@
 
     @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
     @media (max-width: 768px) { .nav-links { display: none; } section { padding: 80px 5%; } .form-box { padding: 2rem; } }
+    /* Container to clip the image */
+.portfolio-img-container {
+    display: block;
+    width: 100%;
+    height: 280px; /* Fixed Height */
+    overflow: hidden;
+    border-radius: 15px;
+    background-color: #f0f0f0; /* Loader color */
+}
+
+/* The actual image */
+.portfolio-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* This is the magic property */
+    object-position: top center; /* Focuses on the top of the website screenshot */
+    transition: transform 0.5s ease;
+}
+
+/* Hover effect */
+.portfolio-item:hover .portfolio-image {
+    transform: scale(1.1);
+}
+
+/* Adjust height for mobile if needed */
+@media (max-width: 768px) {
+    .portfolio-img-container {
+        height: 220px;
+    }
+}
   </style>
 
   <script>
@@ -245,34 +276,63 @@
       </form>
     </div>
   </section>
+<section id="portfolio" class="overflow-hidden padding-large" dir="{{ app()->getLocale() == 'ar' ? 'rtl' : 'ltr' }}">
+    <div class="container-lg" data-aos="zoom-in-up" data-aos-delay="300">
+        <div class="row align-items-center mb-4">
+            <div class="col-md-8">
+                <div class="section-header d-flex flex-wrap justify-content-center justify-content-md-start align-items-center">
+                    <h2 class="display-5 m-0">{{ __('messages.recent_projects') }}</h2>
+                    <a href="#" class="btn-link ms-0 ms-md-5 text-dark text-decoration-none">{{ __('messages.view_all_projects') }}</a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="d-flex justify-content-md-end justify-content-center gap-2">
+                    <div class="swiper-button-prev portfolio-carousel-prev"></div>
+                    <div class="swiper-button-next portfolio-carousel-next"></div>
+                </div>
+            </div>
+        </div>
 
-  <section id="portfolio">
-    <h2>{{ __('messages.portfolio_title') }}</h2>
-    <div class="grid">
-      <a href="https://hayahfashion.net/" target="_blank" class="glass-card">
-        <img src="{{ asset('img/hayah.png') }}" alt="Hayah Fashion">
-        <div class="card-content">
-          <h3>{{ __('messages.portfolio_hayah_title') }}</h3>
-          <p>{{ __('messages.portfolio_hayah_desc') }}</p>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="portfolio-carousel swiper">
+                    <div class="swiper-wrapper">
+                        
+                        {{-- Project Item Loop --}}
+                        @php
+                            $projects = [
+                                ['link' => 'https://hayahfashion.net/', 'img' => 'hayah.png', 'type' => 'ecommerce_site', 'tech' => 'full_stack'],
+                                ['link' => 'https://car-demo-sites.web.app/index.html', 'img' => 'car.png', 'type' => 'car_washing_design', 'tech' => 'frontend'],
+                                ['link' => 'https://abdawyy.github.io/fiber', 'img' => 'fiber.png', 'type' => 'fiber_design', 'tech' => 'frontend'],
+                                ['link' => 'https://cloth-demo-shop.web.app/home', 'img' => 'coza.png', 'type' => 'coza_ecommerce', 'tech' => 'frontend'],
+                                ['link' => 'https://hammad-demo.web.app/', 'img' => 'hammad.png', 'type' => 'hammad_demo', 'tech' => 'frontend'],
+                                ['link' => 'https://e-cloth.egytechsolutions.com', 'img' => 'cloth.png', 'type' => 'clothes_site', 'tech' => 'full_stack'],
+                                ['link' => 'https://coach.egytechsolutions.com', 'img' => 'coach.png', 'type' => 'coaching_site', 'tech' => 'full_stack'],
+                                ['link' => 'https://reda-store.egytechsolutions.com/', 'img' => 'reda.png', 'type' => 'reda_store', 'tech' => 'frontend'],
+                            ];
+                        @endphp
+
+                        @foreach($projects as $project)
+                        <div class="swiper-slide">
+                            <figure class="portfolio-item">
+                                <a href="{{ $project['link'] }}" target="_blank" class="portfolio-img-container">
+                                    <img src="{{ asset('images/' . $project['img']) }}" class="portfolio-image" alt="Project Image">
+                                </a>
+                                <figcaption class="portfolio-title my-3">
+                                    <span class="text-primary text-uppercase fs-6">{{ __('messages.' . $project['type']) }}</span>
+                                    <h3 class="fs-4 fw-bold">{{ __('messages.' . $project['tech']) }}</h3>
+                                </figcaption>
+                            </figure>
+                        </div>
+                        @endforeach
+
+                    </div>
+                    <div class="swiper-pagination mt-4"></div>
+                </div>
+            </div>
         </div>
-      </a>
-      <a href="https://lamstoma.com/" target="_blank" class="glass-card">
-        <img src="{{ asset('img/oma.png') }}" alt="Lamstoma">
-        <div class="card-content">
-          <h3>{{ __('messages.portfolio_lamstoma_title') }}</h3>
-          <p>{{ __('messages.portfolio_lamstoma_desc') }}</p>
-        </div>
-      </a>
-      <a href="https://jaysbasic.site/" target="_blank" class="glass-card">
-        <img src="{{ asset('img/jay.png') }}" alt="Jays Basic">
-        <div class="card-content">
-          <h3>{{ __('messages.portfolio_jays_title') }}</h3>
-          <p>{{ __('messages.portfolio_jays_desc') }}</p>
-        </div>
-      </a>
     </div>
-  </section>
-
+</section>
   <section id="about">
     <div class="stats">
       <div class="stat-item"><span class="num">50+</span><span class="label">Projects Done</span></div>
@@ -289,7 +349,7 @@
     </div>
     <p style="color: var(--text-muted);">&copy; 2025 Egy Tech Solutions. All Rights Reserved.</p>
   </footer>
-
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script>
     /* 1. THEME TOGGLE LOGIC */
     const themeBtn = document.getElementById('themeToggle');
@@ -366,5 +426,55 @@
       };
     });
   </script>
+  <script>document.addEventListener('DOMContentLoaded', function () {
+    // Detect if the page is RTL
+    const isRtl = document.documentElement.dir === 'rtl' || document.body.dir === 'rtl';
+
+    const portfolioSwiper = new Swiper('.portfolio-carousel', {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        rtl: isRtl, // Essential for Arabic support
+        loop: true,
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+        },
+        navigation: {
+            nextEl: '.portfolio-carousel-next',
+            prevEl: '.portfolio-carousel-prev',
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        // Responsive breakpoints
+        breakpoints: {
+            640: {
+                slidesPerView: 2,
+            },
+            1024: {
+                slidesPerView: 3,
+            },
+        }
+    });
+});
+
+var swiper = new Swiper(".portfolio-carousel", {
+    slidesPerView: 1,
+    spaceBetween: 20,
+    rtl: document.documentElement.dir === 'rtl',
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+    },
+    navigation: {
+        nextEl: ".portfolio-carousel-next",
+        prevEl: ".portfolio-carousel-prev",
+    },
+    breakpoints: {
+        640: { slidesPerView: 2 },
+        1024: { slidesPerView: 3 },
+    }
+});</script>
 </body>
 </html>

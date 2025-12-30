@@ -86,6 +86,18 @@ return [
     'toggle_dark' => 'تبديل الوضع الليلي',
     'reserve_title' => 'احجز مكانك',
     'any_other_details' => 'أي تفاصيل أخرى',
+    'recent_projects' => 'المشاريع الأخيرة',
+    'view_all_projects' => 'مشاهدة جميع المشاريع',
+    'ecommerce_site' => 'موقع تجارة إلكترونية',
+    'full_stack' => 'تطوير كامل (Full Stack)',
+    'frontend' => 'واجهة أمامية (Frontend)',
+    'car_washing_design' => 'تصميم مغسلة سيارات',
+    'fiber_design' => 'تصميم فايبر',
+    'coza_ecommerce' => 'متجر كوزا الإلكتروني',
+    'hammad_demo' => 'نموذج حماد',
+    'clothes_site' => 'متجر ملابس',
+    'coaching_site' => 'منصة تدريب',
+    'reda_store' => 'متجر رضا',
 
 
 ];

@@ -90,6 +90,17 @@ return [
     'reserve_title' => 'Reserve Your Spot',
 
     'any_other_details' => 'Any other details',
-
+'recent_projects' => 'Recent Projects',
+    'view_all_projects' => 'View all Projects',
+    'ecommerce_site' => 'E-commerce Site',
+    'full_stack' => 'Full Stack',
+    'frontend' => 'Frontend',
+    'car_washing_design' => 'Car Washing Design',
+    'fiber_design' => 'Fiber Design',
+    'coza_ecommerce' => 'Coza E-commerce Site',
+    'hammad_demo' => 'Hammad Demo',
+    'clothes_site' => 'Clothes Store',
+    'coaching_site' => 'Coaching Platform',
+    'reda_store' => 'Reda Store',
 
 ];
